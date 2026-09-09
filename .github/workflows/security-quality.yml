@@ -1,0 +1,29 @@
+name: security-quality
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile source
+        run: python -m compileall -q src tests
+      - name: Run unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Synthetic assessment smoke test
+        run: |
+          python -m src.cli data/synthetic_events.json --output reports/generated-assessment.md
+          test -s reports/generated-assessment.md
+          grep -q "Cloud Detection Assessment" reports/generated-assessment.md
