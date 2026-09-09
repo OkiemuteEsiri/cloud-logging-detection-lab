@@ -1,0 +1,8 @@
+[
+  {"event_id":"evt-001","timestamp":"2026-09-09T08:00:00Z","provider":"aws","actor":"admin@example.test","action":"ConsoleLogin","source_ip":"203.0.113.10","region":"eu-west-1","resource":"account-root","outcome":"success","mfa":false,"privileged":true},
+  {"event_id":"evt-002","timestamp":"2026-09-09T08:02:00Z","provider":"aws","actor":"admin@example.test","action":"DescribeInstances","source_ip":"203.0.113.10","region":"eu-west-1","resource":"ec2","outcome":"success","mfa":false,"privileged":true},
+  {"event_id":"evt-003","timestamp":"2026-09-09T08:05:00Z","provider":"aws","actor":"admin@example.test","action":"PutBucketPolicy:Public","source_ip":"203.0.113.10","region":"eu-central-1","resource":"synthetic-finance-archive","outcome":"success","privileged":true},
+  {"event_id":"evt-004","timestamp":"2026-09-09T08:09:00Z","provider":"aws","actor":"admin@example.test","action":"StopLogging","source_ip":"203.0.113.10","region":"us-east-1","resource":"org-trail","outcome":"success","privileged":true},
+  {"event_id":"evt-005","timestamp":"2026-09-09T09:00:00Z","provider":"azure","actor":"svc-reporting@example.test","action":"ReadStorage","source_ip":"198.51.100.20","region":"westeurope","resource":"reports","outcome":"success","mfa":null,"privileged":false},
+  {"event_id":"evt-006","timestamp":"2026-09-09T09:05:00Z","provider":"gcp","actor":"analyst@example.test","action":"Login","source_ip":"192.0.2.25","region":"europe-west1","resource":"project-lab","outcome":"success","mfa":true,"privileged":false}
+]
